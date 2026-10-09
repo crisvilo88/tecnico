@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#6d28d9"><title>Gestión Técnica | Rendimiento operativo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="js/config.js"></script><script defer src="js/app.js"></script>
+</head>
+<body>
+  <div id="loginView" class="login-shell">
+    <div class="login-art"><div class="brand-mark">GT</div><div class="art-copy"><span class="eyebrow">CONTROL OPERATIVO</span><h1>Gestión<br><em>Técnica</em></h1><p>Rendimiento, órdenes y jornadas en un solo lugar.</p></div><div class="art-footer">GRUPO TV MAX</div></div>
+    <section class="login-panel"><div class="login-top"><span class="brand-mark small">GT</span><span class="muted">Plataforma de gestión</span></div><div class="login-content"><span class="eyebrow purple">ACCESO SEGURO</span><h2>Iniciar sesión</h2><p class="muted">Ingresa con la cuenta autorizada por el administrador.</p><form id="loginForm"><label>Correo electrónico<input id="loginEmail" type="email" autocomplete="username" required placeholder="usuario@empresa.com"></label><label>Contraseña<input id="loginPassword" type="password" autocomplete="current-password" required placeholder="Tu contraseña"></label><button class="btn primary full" type="submit">Entrar al sistema <span>→</span></button><p id="loginError" class="error-text" role="alert"></p></form><p class="login-note">El acceso se administra desde Supabase Auth. No hay registro público.</p></div></section>
+  </div>
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar"><div class="side-brand"><span class="brand-mark small">GT</span><div><strong>Gestión Técnica</strong><small>TV MAX</small></div><button id="closeSidebar" class="icon-btn mobile-only" aria-label="Cerrar menú">×</button></div>
+      <div class="nav-label">ESPACIO DE TRABAJO</div><nav id="mainNav"><button class="nav-item active" data-page="dashboard"><span class="nav-icon">◫</span>Resumen</button><button class="nav-item" data-page="orders"><span class="nav-icon">▤</span>Órdenes de servicio</button><button class="nav-item" data-page="workdays"><span class="nav-icon">◷</span>Jornadas y novedades</button><div class="nav-label section-label">CONFIGURACIÓN</div><button class="nav-item" data-page="technicians"><span class="nav-icon">♙</span>Técnicos</button><button class="nav-item" data-page="zones"><span class="nav-icon">⌖</span>Zonas</button><button class="nav-item" data-page="services"><span class="nav-icon">⚙</span>Servicios y estándares</button><button class="nav-item" data-page="reports"><span class="nav-icon">▥</span>Informes</button></nav>
+      <div class="sidebar-bottom"><div class="help-card"><div class="help-icon">i</div><strong>Control con trazabilidad</strong><p>Los cambios operativos quedan asociados a su usuario.</p></div><button id="logoutBtn" class="nav-item logout"><span class="nav-icon">↪</span>Cerrar sesión</button></div>
+    </aside>
+    <main class="main-area"><header class="topbar"><button id="openSidebar" class="icon-btn mobile-only" aria-label="Abrir menú">☰</button><div class="breadcrumb">Operaciones <span>/</span> <strong id="breadcrumbPage">Resumen</strong></div><div class="top-actions"><span class="status-dot"></span><span class="muted small-text">Conectado</span><div class="user-chip"><div class="avatar" id="userAvatar">U</div><div><strong id="userEmail">Usuario</strong><small id="userRole">Usuario autorizado</small></div></div></div></header>
+      <section class="page-content"><div id="toast" class="toast hidden" role="status"></div><div id="pageRoot"></div></section><footer class="app-footer">Gestión Técnica <span>•</span> Datos operativos sujetos a validación contra el archivo de rendimiento oficial.</footer>
+    </main>
+  </div>
+  <div id="modalRoot"></div>
+</body></html>
