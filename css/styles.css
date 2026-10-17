@@ -136,3 +136,68 @@
 .report-staffing table{min-width:780px}
 .report-staffing th,.report-staffing td{white-space:normal;overflow-wrap:anywhere}
 @media print{.report-staffing{break-before:page;page-break-before:always}.report-staffing .table-wrap{overflow:visible}.report-staffing table{font-size:8px;table-layout:fixed}}
+
+/* Ajustes de órdenes por cantidad y legibilidad de informes */
+.order-observations,.report-observations{white-space:normal;min-width:150px;max-width:280px;overflow-wrap:anywhere;line-height:1.45}
+.report-preview .table-wrap{overflow:visible}
+.report-preview table{table-layout:fixed;white-space:normal;width:100%}
+.report-preview th,.report-preview td{white-space:normal;overflow-wrap:anywhere;word-break:normal;vertical-align:top}
+.report-chart-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+.report-chart{min-width:0;max-width:100%;overflow:hidden}
+.bar-row{min-width:0}
+.bar-label{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;min-width:0;line-height:1.4}
+.bar-label span{min-width:0;overflow-wrap:anywhere;word-break:normal;flex:1}
+.bar-label strong{flex:0 0 auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bar-track{width:100%;overflow:hidden;border-radius:99px}
+.status-chart-wrap{display:grid;grid-template-columns:minmax(100px,160px) minmax(0,1fr);gap:12px;align-items:center}
+.report-donut-svg{display:block;width:100%;height:auto;max-width:160px;aspect-ratio:1;overflow:visible}
+.status-legend{min-width:0;width:100%}
+.status-legend>div{display:grid;grid-template-columns:9px minmax(0,1fr) auto;gap:6px;align-items:start;min-width:0}
+.status-legend span{min-width:0;white-space:normal;overflow-wrap:anywhere;line-height:1.35}
+@media(max-width:760px){.report-chart-grid{grid-template-columns:minmax(0,1fr)}.status-chart-wrap{grid-template-columns:minmax(100px,145px) minmax(0,1fr)}.report-preview .table-wrap{overflow:auto}}
+@media print{
+ .report-preview{width:100%;overflow:visible}
+ .report-chart-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+ .report-chart{padding:8px;overflow:visible;min-width:0;break-inside:avoid;page-break-inside:avoid}
+ .report-chart h3{font-size:10px;margin-bottom:7px}
+ .status-chart-wrap{grid-template-columns:110px minmax(0,1fr);gap:5px}
+ .report-donut-svg{width:110px;height:110px;max-width:110px}
+ .status-legend>div{font-size:7px;grid-template-columns:6px minmax(0,1fr) auto;gap:3px;margin:3px 0}
+ .status-legend i{width:6px;height:6px}
+ .bar-label{font-size:7px;gap:4px}
+ .bar-track{height:5px;margin:3px 0 6px}
+ .report-preview table{font-size:7px;table-layout:fixed}
+ .report-preview th,.report-preview td{padding:3px;white-space:normal;overflow-wrap:anywhere}
+ .report-observations{min-width:0;max-width:none}
+}
+
+/* Informe compacto: resumen y los cuatro gráficos deben caber en la primera hoja. */
+.report-metrics-section{margin-top:10px}
+.report-metrics-section>h3{font-size:13px;margin-bottom:7px}
+.report-summary{gap:7px;margin:8px 0 10px}
+.report-box{padding:9px 11px;border-radius:9px}
+.report-box small{font-size:9px;line-height:1.2}
+.report-box strong{font-size:19px;margin-top:4px}
+.metric-caption{display:block;font-size:8px;line-height:1.25;margin-top:3px}
+.report-chart-grid{gap:8px;margin:9px 0}
+.report-chart{padding:10px}
+.report-chart h3{font-size:11px;margin-bottom:7px}
+@media print{
+  .report-title{margin-bottom:5px}
+  .report-title h2{font-size:17px;margin:3px 0}
+  .report-title p{font-size:8px;margin:2px 0}
+  .report-title .badge{font-size:8px;padding:3px 6px}
+  .report-summary{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin:6px 0 7px}
+  .report-box{padding:6px 8px;border-radius:6px}
+  .report-box small{font-size:7px}
+  .report-box strong{font-size:15px;margin-top:3px}
+  .metric-caption{font-size:6px;line-height:1.15;margin-top:2px}
+  .report-chart-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:6px 0}
+  .report-chart{padding:6px;border-radius:6px}
+  .report-chart h3{font-size:8px;margin-bottom:4px}
+  .status-chart-wrap{grid-template-columns:88px minmax(0,1fr);gap:4px}
+  .report-donut-svg{width:88px;height:88px;max-width:88px}
+  .status-legend>div{font-size:6px;grid-template-columns:5px minmax(0,1fr) auto;gap:2px;margin:2px 0}
+  .status-legend i{width:5px;height:5px}
+  .report-detail{break-before:page;page-break-before:always}
+}

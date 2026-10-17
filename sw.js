@@ -7,7 +7,7 @@
  *
  * Para una actualización manual futura, cambia CACHE_VERSION (por ejemplo, v2).
  */
-const CACHE_VERSION = "gestion-tecnica-v3";
+const CACHE_VERSION = "gestion-tecnica-v7";
 const CACHE_NAME = `gestion-tecnica-${CACHE_VERSION}`;
 
 const APP_SHELL = [
